@@ -14,3 +14,15 @@ precmd() {
     tmux setenv "$(tmux display -p 'TMUX_PWD_#D')" "$PWD"
   fi
 }
+
+
+#TO DO
+#   if screen session exists, load it
+#   add in the vim package
+#   merge in the other zsh repo i downloaded
+#   set up antigen and zsh bundles
+#   
+
+#Vim keybindings
+bindkey -v
+export KEYTIMEOUT=1

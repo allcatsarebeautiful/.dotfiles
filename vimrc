@@ -1,4 +1,4 @@
-colorscheme solarized
+colorscheme molokai
 
 filetype plugin indent on           " Enable vim plugins
 syntax on                           " Enable syntax highlighting

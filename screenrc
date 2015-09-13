@@ -2,33 +2,134 @@
 
 shell -${SHELL}
 defscrollback 100000            # Sets the default size of the scrollback buffer to 100000
-shelltitle ''                   # Set the default window name to empty string instead of the arbitrary "bash"
+shelltitle ''                   # Set the default window name to empty string 
 vbell off                       # Turn visual bell off
-sorendition "-b dw"             # Change the way screen does highlighting for text marking and printing messages.
-bindkey "^[[23~" prev           # prev window with F11
-bindkey "^[[24~" next           # next window with F12
+sorendition "-b dw"             # Change how screen highlights for text marking and printing messages.
 nonblock on                     # Don't block command output if the terminal stops responding
 startup_message off             # Turn off startup message
 
-bindkey "^[Od" prev             # change window with ctrl-left
-bindkey "^[Oc" next             # change window with ctrl-right
+escape ``                       # Sets the escape key to '
+#escape ```                     # Sets the escape key to ctrl+'
+
+bind R eval "source $HOME/.screenrc" #"echo '.screenrc reloaded!'"       #Reloads screen
 
 
+bind c screen 1                 # Set the first window to 1 instead of 0
+bind ^c screen 1
+bind 0 select 10
+screen 1
+
+bindkey "^[h" prev              # alt+h for previous window
+bindkey "^[l" next              # alt+l for next window
+
+bind j focus down               # navigating regions
+bind k focus up
+bind h focus left
+bind l focus right
+
+bind + resize +5                # resizing regions
+bind - resize -3
+bind = resize =
+
+mousetrack on                   # mouse tracking allows to switch region focus by clicking
 
 # The window 'Caption' is available per split window, whereas hardstatus is only per complete screen.
-caption always "%{=b dw}:%{-b dw}:%{=b dk}[ %{-b dw}%{-b dg}$USER%{-b dw}@%{-b dg}%H %{=b dk}] [ %= %?%{-b dg}%-Lw%?%{+b dk}(%{+b dw}%n:%t%{+b dk})%?(%u)%?%{-b dw}%?%{-b dg}%+Lw%? %{=b dk}]%{-b dw}:%{+b dw}:"
-backtick 2 5 5 $HOME/scripts/meminfo
+
+#Set up caption so that it only displays the window number and screen name, with the background color depending on focus or not. change the color of the parens and brackets
+
+caption always "%= %-w%L>%{= BW}%n*%t%{-}%52<%+w %L="
 hardstatus on
 hardstatus alwayslastline
-hardstatus string '%-= %M %d, %Y %c:%s%{-}'
-
+hardstatus string '%{=b KG}[%?%{-b Kw}%-Lw%?%{+b KW}(%{+b Kg}%n:%t%{+b KW})%?(%u)%?%{-b Kg}%?%{-b Kw}%+Lw%? %{= Kd} %-= %{=b Kw} :: %{-b KG}%H %{KW}|%{KY}%101`%{KW}| %D %M %d, %Y%{= Kc} %{KW}|%{KY}%101`%{KW}|%C:%s %a%{=b KG} ]%{-}'
 
 # Some decryption hints:
-# %{= KW}     background light black (aka dark gray) with foreground light white
-# %{= wb}     background dark white (ake light gray) with foreground dark blue
-# %-Lw        all windows before the current window.
-# %n%f %t     current window number, flags and title.
-# %+Lw        all windows after the current window.
-# %-=         pad remaining spaces.
-# %H          hostname.
-# %M%d %s     month and day (MmmDD) and current time (HH:MM).
+# %{= KW}   background light black (aka dark gray) with foreground light white
+# %{= wb}   background dark white (aka light gray) with foreground dark blue
+# %-Lw      all windows before the current window.
+# %n%f %t   current window number, flags and title.
+# %+Lw      all windows after the current window.
+# %-=       pad remaining spaces.
+# %H        hostname.
+# %M%d %s   month and day (MmmDD) and current time (HH:MM).
+
+# %         the escape character itself
+# a         either 'am' or 'pm'
+# A         either 'AM' or 'PM'
+# c         current time HH:MM in 24h format
+# C         current time HH:MM in 12h format
+# d         day number
+# D         weekday name
+# f         flags of the window
+# F         sets %? to true if the window has the focus
+# h         hardstatus of the window
+# H         hostname of the system
+# l         current load of the system
+# m         month number
+# M         month name
+# n         window number
+# s         seconds
+# t         window title
+# u         all other users on this window
+# w         all window numbers and names. With '-'  quailifier:  up  to  the current  window;  with  '+'  qualifier: starting with the window
+# W         all window numbers and names except the current one
+# y         last two digits of the year number
+# Y         full year number
+# ?         the part to the next %? is displayed only if a % escape inside the part expands to a non-empty string 
+# :         else part of %? 
+# =         pad the string to the display's width. If a number is specified, pad to the percentage of the window's width.
+#               A 0 qualifier tells screen to treat the number as absolute position.
+#               Pad relative to the last absolute pad position by adding a + qualifier or to pad relative to the right margin by using -.
+#               The padding truncates the string if the specified position lies before the current position. Add the L qualifier to change this
+# {         attribute/color modifier string terminated by the next } 
+# `         substitute with the output of a `backtick' command. The length qualifier is misused to identify one of the commands. See Backtick.
+
+# The 'c' and 'C' escape may be qualified with a '0' to make screen use zero instead of space as fill character.
+# The '0' qualifier also makes the '=' escape use  absolute positions.
+# The 'n'  and '=' escapes understand a length qualifier (e.g. '%3n')
+#     'D' and 'M' can be prefixed with 'L' to generate long names
+#     'w' and 'W' also show the window flags if 'L' is given.
+
+# An attribute/color modifier is is used to change the attributes or the color settings.
+# Its format is "[attribute modifier] [color description]".
+# The attribute  modifier must be prefixed by a change type indicator if it can be confused with a color description.
+# The following change types are known:
+
+#       +      add the specified set to the current attributes
+#       -      remove the set from the current attributes
+#       !      invert the set in the current attributes
+#       =      change the current attributes to the specified set
+
+# The attribute set is a combination of the following letters:
+#       d      dim
+#       u      underline
+#       b      bold
+#       r      reverse
+#       s      standout
+#       B      blinking
+
+# Colors are two letters: background and foreground color (in that order).
+#       k      black
+#       r      red
+#       g      green
+#       y      yellow
+#       b      blue
+#       m      magenta
+#       c      cyan
+#       w      white
+#       d      default color
+#       .      leave color unchanged
+
+# Capitalized letter == bright color.
+# Pseudo-color 'i' sets the brightness and leaves the color unchanged.
+# "%{-}" restores the attributes and colors that were set before the last change was made (i.e., pops one level of the color-change stack).
+
+#      Examples
+#       "G"    set color to bright green
+#       "+b r" use bold red
+#       "= yd" clear all attributes, write in default color on yellow background.
+#       %-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%<
+#              Windows centered at current window and truncated to available width.
+#              The current window is displayed white on blue.  This can be used with "hardstatus alwayslastline".
+#       %?%F%{.R.}%?%3n %t%? [%h]%?
+#              The window number and title and the window's hardstatus, if one is set.
+#              Also use a red background if this is the active focus. Useful for "caption string".
