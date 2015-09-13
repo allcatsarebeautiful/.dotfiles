@@ -1,0 +1,16 @@
+#- clean: ['~', '~/.config']
+- clean: ['~']
+
+- link:
+    ~/.dotfiles: ''
+    ~/.gitconfig: gitconfig
+    ~/.gitignore_global: gitignore_global
+    ~/.screenrc: screenrc
+    ~/.vim: vim/
+    ~/.vimrc: vimrc
+    ~/.zsh: zsh/
+    ~/.zshrc: zshrc
+
+- shell:
+    # - [git submodule --init --recursive, Installing submodules]
+    - git update-submodules # after linking ~/.gitconfig
