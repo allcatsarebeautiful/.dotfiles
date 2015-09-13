@@ -1,0 +1,34 @@
+#Sets the options for the screen utility
+
+shell -${SHELL}
+defscrollback 100000            # Sets the default size of the scrollback buffer to 100000
+shelltitle ''                   # Set the default window name to empty string instead of the arbitrary "bash"
+vbell off                       # Turn visual bell off
+sorendition "-b dw"             # Change the way screen does highlighting for text marking and printing messages.
+bindkey "^[[23~" prev           # prev window with F11
+bindkey "^[[24~" next           # next window with F12
+nonblock on                     # Don't block command output if the terminal stops responding
+startup_message off             # Turn off startup message
+
+bindkey "^[Od" prev             # change window with ctrl-left
+bindkey "^[Oc" next             # change window with ctrl-right
+
+
+
+# The window 'Caption' is available per split window, whereas hardstatus is only per complete screen.
+caption always "%{=b dw}:%{-b dw}:%{=b dk}[ %{-b dw}%{-b dg}$USER%{-b dw}@%{-b dg}%H %{=b dk}] [ %= %?%{-b dg}%-Lw%?%{+b dk}(%{+b dw}%n:%t%{+b dk})%?(%u)%?%{-b dw}%?%{-b dg}%+Lw%? %{=b dk}]%{-b dw}:%{+b dw}:"
+backtick 2 5 5 $HOME/scripts/meminfo
+hardstatus on
+hardstatus alwayslastline
+hardstatus string '%-= %M %d, %Y %c:%s%{-}'
+
+
+# Some decryption hints:
+# %{= KW}     background light black (aka dark gray) with foreground light white
+# %{= wb}     background dark white (ake light gray) with foreground dark blue
+# %-Lw        all windows before the current window.
+# %n%f %t     current window number, flags and title.
+# %+Lw        all windows after the current window.
+# %-=         pad remaining spaces.
+# %H          hostname.
+# %M%d %s     month and day (MmmDD) and current time (HH:MM).
