@@ -1,5 +1,8 @@
-Shamelessly copied from Anish Athalye and a few other sources.
-[dotbot]: https://github.com/anishathalye/dotbot
+Shamelessly adpated from ze-best-zsh-config while moving away from oh-my-zsh
+
+Uses [dotbot]: https://github.com/anishathalye/dotbot to manage dotfiles.
+Uses [antigen]: https://github.com/zsh-users/antigen to manage zsh plugins
+Uses [vundle]: https://github.com/VundleVim/Vundle.vim to manage vim plugins
 
 Dotfiles
 ========
@@ -20,3 +23,8 @@ You can make local customizations for some programs by editing these files:
 * `zsh` : `~/.zshrc_local_after` run after `.zshrc`
 * `git` : `~/.gitconfig_local`
 * `tmux` : `~/.tmux_local.conf`
+
+Fonts
+========
+
+This terminal setup needs powerline fonts

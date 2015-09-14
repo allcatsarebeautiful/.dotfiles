@@ -37,7 +37,8 @@ mousetrack on                   # mouse tracking allows to switch region focus b
 caption splitonly "%?%F%{Wg}%:%{Kw}%? %= %?%F%{+b Rg}%:%{+b rw}%? >-------[%n: %t]-------< %?%F%{Wg}%:%{Kw}%?%60<"
 hardstatus on
 hardstatus alwayslastline
-hardstatus string '%{=b KG}[%?%{-b Kw}%-Lw%?%{+b KW}(%{+b Kg}%n:%t%{+b KW})%?(%u)%?%{-b Kg}%?%{-b Kw}%+Lw%? %{= Kd} %-= %{=b Kw} :: %{-b KG}%H %{KW}|%{KY}%101`%{KW}| %D %M %d, %Y%{= Kc} %{KW}|%{KY}%101`%{KW}|%C:%s %a%{=b KG} ]%{-}'
+#make the whole thing right aligned
+hardstatus string '%{=b KG}[%?%{-b Kw}%-Lw%?%{+b KW}(%{+b Kg}%n: %t%{+b KW})%?(%u)%?%{-b Kg}%?%{-b Kw}%+Lw%? %{= Kd} %-= %{=b Kw} :: %{-b KG}%H %{KW}|%{KY}%101`%{KW}| %D %M %d, %Y%{= Kc} %{KW}|%{KY}%101`%{KW}|%C:%s %a%{=b KG} ]%{-}'
 
 # Some decryption hints:
 # %{= KW}   background light black (aka dark gray) with foreground light white

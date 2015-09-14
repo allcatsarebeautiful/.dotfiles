@@ -2,7 +2,9 @@
 - clean: ['~']
 
 - link:
+    ~/.antigen: antigen/
     ~/.dotfiles: ''
+    ~/.fonts: fonts/
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.screenrc: screenrc
