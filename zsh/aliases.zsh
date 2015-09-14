@@ -13,15 +13,16 @@ alias lsg='ls -GFh'
 alias llg='ls -GFhl'
 
 # Add some easy shortcuts for formatted directory listings and add a touch of color.
-alias ll='ls -lF --color=auto'
-alias la='ls -alF --color=auto'
-alias ls='ls -F'
+alias ll='ls -hlGF --color=auto'
+alias la='ls -alhGF --color=auto'
+alias ls='ls -F --color=auto'
 alias lsh='ls -a | grep "^\."'
 alias l='ls'
 alias sl='ls'
 alias dc='cd'
 alias s='screen'
 alias sr='screen -rd -ln on'
+alias sdr='screen -dRR'
 
 alias datetest="echo `date +%Y%m%d%S`" 
 function lt() { ls -ltrsa "$@" | tail; }

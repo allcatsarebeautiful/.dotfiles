@@ -19,8 +19,8 @@ bind ^c screen 1
 bind 0 select 10
 screen 1
 
-bindkey "^[h" prev              # alt+h for previous window
-bindkey "^[l" next              # alt+l for next window
+bindkey "^[," prev              # alt+, for previous window
+bindkey "^[." next              # alt+. for next window
 
 bind j focus down               # navigating regions
 bind k focus up
@@ -33,11 +33,8 @@ bind = resize =
 
 mousetrack on                   # mouse tracking allows to switch region focus by clicking
 
-# The window 'Caption' is available per split window, whereas hardstatus is only per complete screen.
-
-#Set up caption so that it only displays the window number and screen name, with the background color depending on focus or not. change the color of the parens and brackets
-
-caption always "%= %-w%L>%{= BW}%n*%t%{-}%52<%+w %L="
+# The window 'Caption' is available per split window, whereas hardstatus is only per screen
+caption splitonly "%?%F%{Wg}%:%{Kw}%? %= %?%F%{+b Rg}%:%{+b rw}%? >-------[%n: %t]-------< %?%F%{Wg}%:%{Kw}%?%60<"
 hardstatus on
 hardstatus alwayslastline
 hardstatus string '%{=b KG}[%?%{-b Kw}%-Lw%?%{+b KW}(%{+b Kg}%n:%t%{+b KW})%?(%u)%?%{-b Kg}%?%{-b Kw}%+Lw%? %{= Kd} %-= %{=b Kw} :: %{-b KG}%H %{KW}|%{KY}%101`%{KW}| %D %M %d, %Y%{= Kc} %{KW}|%{KY}%101`%{KW}|%C:%s %a%{=b KG} ]%{-}'

@@ -17,7 +17,9 @@ precmd() {
 
 
 #TO DO
+#   fix the colors script
 #   if screen session exists, load it
+#   keep ssh sessions alive!
 #   add in the vim package
 #   merge in the other zsh repo i downloaded
 #   set up antigen and zsh bundles
