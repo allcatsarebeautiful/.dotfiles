@@ -5,9 +5,9 @@
     antigen bundle robbyrussell/oh-my-zsh lib/
 
 # Antigen Bundles
-    zsh-users/zsh-syntax-highlighting
-    zsh-users/zsh-completions
-    zsh-users/zaw
+    antigen bundle zsh-users/zsh-syntax-highlighting
+    antigen bundle zsh-users/zsh-completions
+    antigen bundle zsh-users/zaw
     antigen bundle yonchu/vimman
     antigen bundle unixorn/autoupdate-antigen.zshplugin
     antigen bundle djui/alias-tips
@@ -50,18 +50,11 @@ fi
 # Antigen Theme
 #    robbyrussel
 #    agnoster
-#    avit
+#    avit #would be nice with pwd and vim status
 #    blinks
-#    flazz
-#    junkfood
-#    dallas
-#    mh
-    antigen theme norm
-#    pygmalion
-#    sunrise
-#    superjarin
-#    terminalparty
-#    wezm
+#!    mh
+#    antigen theme norm
+    antigen theme pygmalion
 #    ys
 #    (not in oh-my-zsh)
 #    xxf

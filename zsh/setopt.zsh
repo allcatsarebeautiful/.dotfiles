@@ -26,6 +26,8 @@ setopt HIST_REDUCE_BLANKS
 # Include more information about when the command was executed, etc
 setopt EXTENDED_HISTORY
 
+# Allow history to be shared across multiple screen windows
+setopt SHARE_HISTORY
 # ===== Completion 
 
 # Allow completion from within a word/phrase

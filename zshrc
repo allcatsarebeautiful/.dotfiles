@@ -17,7 +17,7 @@ source ~/.zsh/antigen_settings.zsh
 
 #TO DO
 #   Which of those items do i still want to keep? what is redundant and dumb at this point?
-
+#   make my vimrc be dominant over the zsh theme!
 
 #   fix my exports!
 #   remove homebrew shit
