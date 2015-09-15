@@ -1,4 +1,4 @@
-# Why ever use vi when we have vim?
+# Wh ever use vi when we have vim?
 alias vi='vim'
 
 # Make some possibly destructive commands more interactive.

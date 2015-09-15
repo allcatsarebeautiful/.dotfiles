@@ -15,6 +15,7 @@ set paste                           " Use intelligent paste with whitespace
 set foldmethod=indent
 set foldlevel=99
 
+set t_Co=256
 set encoding=utf-8
 set scrolloff=3
 set autoindent
@@ -99,4 +100,16 @@ map <leader>l              :call WinMove('l')<cr>
 map <leader>j              :call WinMove('j')<cr>
 map <leader>wc :wincmd q<cr>
 map <leader>wr <C-W>r
+
+
+
+
+" Screen Title script pulled from http://www.anattatechnologies.com/q/2014/04/vim-and-screen-automagic-titles/
+if &term == "screen"
+    let &titlestring = "vim (" . expand("%:t") . ")"
+    set t_ts=k
+    set t_fs=\
+    set title
+endif
+autocmd TabEnter,WinEnter,BufReadPost,FileReadPost,BufNewFile * let &titlestring = 'vim(' . expand("%:t") . ')'
 

@@ -12,7 +12,7 @@
     antigen bundle unixorn/autoupdate-antigen.zshplugin
     antigen bundle djui/alias-tips
     antigen bundle autojump
-    #antigen bundle common-aliases #if you want to use this, maybe delete aliases file?
+    antigen bundle common-aliases
     antigen bundle command-not-found #only for Ubuntu/opensuse
     antigen bundle git
     antigen bundle git-flow

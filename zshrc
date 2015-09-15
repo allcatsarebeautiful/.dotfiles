@@ -2,6 +2,34 @@
 source ~/.antigen/antigen.zsh
 source ~/.zsh/antigen_settings.zsh
 
+
+# turn off debug trap, turn on later if we're in screen
+trap "" DEBUG
+
+# Show the current directory AND running command in the screen window title
+# inspired from http://www.davidpashley.com/articles/xterm-titles-with-bash.html
+if [ "$TERM" = "fuckscreen" ]; then
+    export PROMPT_COMMAND='true'
+    set_screen_window() {
+      HPWD=`basename "$PWD"`
+      if [ "$HPWD" = "$USER" ]; then HPWD='~'; fi
+      if [ ${#HPWD} -ge 10 ]; then HPWD='..'${HPWD:${#HPWD}-8:${#HPWD}}; fi
+      case "$BASH_COMMAND" in
+        *\033]0*);;
+        "true")
+            printf '\ek%s\e\\' "$HPWD:"
+            ;;
+        *)
+            printf '\ek%s\e\\' "$HPWD:${BASH_COMMAND:0:20}"
+            ;;
+      esac
+    }
+    trap set_screen_window DEBUG
+fi
+
+
+
+
 #source ~/.zsh/colors.zsh
 #source ~/.zsh/setopt.zsh
 #source ~/.zsh/exports.zsh
@@ -18,6 +46,9 @@ source ~/.zsh/antigen_settings.zsh
 #TO DO
 #   Which of those items do i still want to keep? what is redundant and dumb at this point?
 #   make my vimrc be dominant over the zsh theme!
+#   make it so that pwd and vim filename are displayed in caption
+
+
 
 #   fix my exports!
 #   remove homebrew shit
@@ -36,3 +67,24 @@ source ~/.zsh/antigen_settings.zsh
 #Vim keybindings
 bindkey -v
 export KEYTIMEOUT=1
+
+#case $TERM in
+#    *xterm*|rxvt|(dt|k|E)term)
+#        precmd () {
+#            print -Pn "\033]0;%n@%m : %~\007"
+#        }
+#        preexec () {
+#            print -Pn "\033]0;%n@%m : <$1>\007"
+#        }
+#        ;;
+#esac
+
+if [ "$SHELL" = '/usr/bin/zsh' ]
+then
+    case $TERM in
+         rxvt|*term)
+         precmd() { print -Pn "\e]0;%m:%~\a" }
+         preexec () { print -Pn "\e]0;$1\a" }
+         ;;
+    esac
+fi

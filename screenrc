@@ -8,6 +8,12 @@ sorendition "-b dw"             # Change how screen highlights for text marking 
 nonblock on                     # Don't block command output if the terminal stops responding
 startup_message off             # Turn off startup message
 
+
+term screen-256color
+attrcolor b ".I"    # allow bold colors - necessary for some reason
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'   # tell screen how to set colors. AB = background, AF=foreground
+defbce on    # use current bg color for erased chars
+
 escape ``                       # Sets the escape key to '
 #escape ```                     # Sets the escape key to ctrl+'
 
@@ -18,6 +24,10 @@ bind c screen 1                 # Set the first window to 1 instead of 0
 bind ^c screen 1
 bind 0 select 10
 screen 1
+
+bind s eval split focus next next
+bind S eval split focus next next
+
 
 bindkey "^[," prev              # alt+, for previous window
 bindkey "^[." next              # alt+. for next window
@@ -32,6 +42,14 @@ bind - resize -3
 bind = resize =
 
 mousetrack on                   # mouse tracking allows to switch region focus by clicking
+
+
+# Windows yoinked from https://gist.github.com/joaopizani/2718397
+#Default Windows
+screen -t zsh1  1
+screen -t zsh2  2
+screen -t vim1  3
+screen -t vim2  4
 
 # The window 'Caption' is available per split window, whereas hardstatus is only per screen
 caption splitonly "%?%F%{Wg}%:%{Kw}%? %= %?%F%{+b Rg}%:%{+b rw}%? >-------[%n: %t]-------< %?%F%{Wg}%:%{Kw}%?%60<"
