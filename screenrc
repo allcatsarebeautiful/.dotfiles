@@ -44,13 +44,6 @@ bind = resize =
 mousetrack on                   # mouse tracking allows to switch region focus by clicking
 
 
-# Windows yoinked from https://gist.github.com/joaopizani/2718397
-#Default Windows
-screen -t zsh1  1
-screen -t zsh2  2
-screen -t vim1  3
-screen -t vim2  4
-
 # The window 'Caption' is available per split window, whereas hardstatus is only per screen
 caption splitonly "%?%F%{Wg}%:%{Kw}%? %= %?%F%{+b Rg}%:%{+b rw}%? >-------[%n: %t]-------< %?%F%{Wg}%:%{Kw}%?%60<"
 hardstatus on

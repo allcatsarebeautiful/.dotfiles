@@ -1,5 +1,3 @@
-Shamelessly adpated from ze-best-zsh-config while moving away from oh-my-zsh
-
 Uses [dotbot]: https://github.com/anishathalye/dotbot to manage dotfiles.
 Uses [antigen]: https://github.com/zsh-users/antigen to manage zsh plugins
 Uses [vundle]: https://github.com/VundleVim/Vundle.vim to manage vim plugins
@@ -28,3 +26,17 @@ Fonts
 ========
 
 This terminal setup needs powerline fonts
+
+# Copy any (additional) fonts you may want to the ~/.dotfiles/fonts directory
+* cd /tmp
+* git clone http://github.com/gabrielelana/awesome-terminal-fonts
+* cd awesome-terminal-fonts
+* git checkout patching-strategy
+* cp patched/*.ttf ~/.dotfiles/fonts
+* sh ~/.dotfiles/install.sh
+
+# update the font-info cache
+* sudo fc-cache -fv ~/.fonts
+
+In './config/10-symbols.conf' replace 'PragmataPro' with the name of your preferred font
+Copy './config/10-symbols.conf'to '~/.config/fontconfig/conf.d' directory

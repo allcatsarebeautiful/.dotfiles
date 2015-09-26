@@ -1,2 +1,16 @@
 alias www='cd /var/www/'
 alias apache='cd /etc/apache2/'
+
+alias sdr="screen -dRR"
+
+alias node="nodejs"
+alias zshrc="vim ~/.zshrc"
+alias diff="colordiff"
+alias df="df -H"
+alias du="du -ch"
+alias ls="ls --color=auto"
+alias update="sudo apt-get update && sudo apt-get upgrade"
+alias install="sudo apt-get install"
+alias glog="git log --graph --oneline --decorate --date-order --color --boundary"
+alias lh='ls -l .??*'
+alias lhd='ls -ld .??*'

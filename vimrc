@@ -1,8 +1,39 @@
-colorscheme molokai
+set nocompatible              " be iMproved, required
+filetype off                  " required"
 
-filetype plugin indent on           " Enable vim plugins
+"------------------->>> VUNDLE <<< ---------------"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" set the runtime path to include Vundle and initialize
+        set rtp+=~/.vim/bundle/Vundle.vim
+        call vundle#begin()
+
+        " Let Vundle manage Vundle
+        Bundle 'gmarik/vundle'
+
+        " My Bundles
+        Bundle 'tpope/vim-sensible'
+        Bundle 'tpope/vim-surround'
+        Bundle 'tpope/vim-fugitive'
+        Bundle 'nanotech/jellybeans.vim'
+        Bundle 'Lokaltog/vim-powerline'
+        Bundle 'scrooloose/syntastic'
+        Bundle 'scrooloose/nerdtree'
+        Bundle 'kien/ctrlp.vim'
+        "Bundle 'kana/vim-textobj-user'
+
+        " All of your Plugins must be added before the following line
+        call vundle#end()            " required
+        filetype plugin indent on    " required
+"------------------->>> NON-VUNDLE BELOW HERE <<< ---------------"
+
+color jellybeans
 syntax on                           " Enable syntax highlighting
-set nocompatible
 set modelines=0
 
 set tabstop=4                       " Set up tabs so that they insert 4 spaces instead of a tab character
