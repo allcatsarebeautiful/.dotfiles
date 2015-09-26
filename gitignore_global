@@ -11,7 +11,9 @@
 # Editing tools and IDEs #
 ##########################
 *.swp
+*.swo
 *~
+.netrwhist
 
 # Logs and databases #
 ######################

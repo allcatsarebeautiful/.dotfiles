@@ -1,7 +1,7 @@
 #Load antigen.sh and then all of the bundles
 source ~/.antigen/antigen.zsh
 source ~/.zsh/antigen_settings.zsh
-
+source ~/.aliases
 
 # turn off debug trap, turn on later if we're in screen
 trap "" DEBUG
@@ -47,14 +47,13 @@ fi
 #   Which of those items do i still want to keep? what is redundant and dumb at this point?
 #   make my vimrc be dominant over the zsh theme!
 #   make it so that pwd and vim filename are displayed in caption
-
+#   find a theme (or modify one) so that if VI mode is active in CLI then it is displayed
 
 
 #   fix my exports!
 #   remove homebrew shit
 #   if screen session exists, load it
 #   keep ssh sessions alive!
-#   add in the vim package for zsh
 #   set up powerline/powerline$
 #   set up gitflow
 #   on creating a new window, call randquote

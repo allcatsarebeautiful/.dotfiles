@@ -2,6 +2,7 @@
 - clean: ['~']
 
 - link:
+    ~/.aliases: aliases
     ~/.antigen: antigen/
     ~/.dotfiles: ''
     ~/.fonts: fonts/
