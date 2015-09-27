@@ -14,3 +14,9 @@ alias install="sudo apt-get install"
 alias glog="git log --graph --oneline --decorate --date-order --color --boundary"
 alias lh='ls -l .??*'
 alias lhd='ls -ld .??*'
+
+
+alias tn="tmux new"
+alias tns="tmux new -s"
+alias ta="tmux attach"
+alias tat="tmux attach -t"

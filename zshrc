@@ -1,7 +1,7 @@
 #Load antigen.sh and then all of the bundles
 source ~/.antigen/antigen.zsh
 source ~/.zsh/antigen_settings.zsh
-source ~/.aliases
+source ~/.aliases.local
 
 # Show the current directory AND running command in the screen window title
 # inspired from http://www.davidpashley.com/articles/xterm-titles-with-bash.html

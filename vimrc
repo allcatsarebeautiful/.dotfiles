@@ -21,10 +21,14 @@ filetype off                  " required"
         Bundle 'tpope/vim-surround'
         Bundle 'tpope/vim-fugitive'
         Bundle 'nanotech/jellybeans.vim'
-        Bundle 'Lokaltog/vim-powerline'
+        "Bundle 'Lokaltog/vim-powerline'
+        Bundle 'bling/vim-airline'
         Bundle 'scrooloose/syntastic'
         Bundle 'scrooloose/nerdtree'
         Bundle 'kien/ctrlp.vim'
+        Bundle 'tmux-plugins/vim-tmux'
+        Bundle 'tmux-plugins/vim-tmux-focus-events'
+        Plugin 'christoomey/vim-tmux-navigator'
         "Bundle 'kana/vim-textobj-user'
 
         " All of your Plugins must be added before the following line
@@ -35,7 +39,7 @@ filetype off                  " required"
 color jellybeans
 syntax on                           " Enable syntax highlighting
 set modelines=0
-
+set title                           " Set Window title
 set tabstop=4                       " Set up tabs so that they insert 4 spaces instead of a tab character
 set shiftwidth=4
 set softtabstop=4

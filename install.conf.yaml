@@ -2,13 +2,15 @@
 - clean: ['~']
 
 - link:
-    ~/.aliases: aliases
+    ~/.aliases.local: aliases.local
     ~/.antigen: antigen/
     ~/.dotfiles: ''
     ~/.fonts: fonts/
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.screenrc: screenrc
+    ~/.tmux: tmux/
+    ~/.tmux.conf: tmux.conf
     ~/.vim: vim/
     ~/.vimrc: vimrc
     ~/.zsh: zsh/
