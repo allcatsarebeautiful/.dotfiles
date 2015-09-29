@@ -2,7 +2,7 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 [submodule "antigen"]
-	path = antigen
+	path = zsh/antigen
 	url = https://github.com/zsh-users/antigen.git
 [submodule "vim/bundle/Vundle.vim"]
 	path = vim/bundle/Vundle.vim

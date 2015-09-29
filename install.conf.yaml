@@ -5,17 +5,17 @@
     ~/.aliases.local: aliases.local
     ~/.antigen: antigen/
     ~/.config: config/
-    ~/.dotfiles: ''
+    #~/.dotfiles: ''
     ~/.fonts: fonts/
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.screenrc: screenrc
     ~/.tmux: tmux/
-    ~/.tmux.conf: tmux.conf
+    ~/.tmux.conf: tmux/tmux.conf
     ~/.vim: vim/
-    ~/.vimrc: vimrc
+    ~/.vimrc: vim/vimrc
     ~/.zsh: zsh/
-    ~/.zshrc: zshrc
+    ~/.zshrc: zsh/zshrc
 
 - shell:
     # - [git submodule --init --recursive, Installing submodules]
