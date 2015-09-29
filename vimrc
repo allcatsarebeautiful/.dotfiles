@@ -1,5 +1,5 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required"
+filetype off                  " required
 
 "------------------->>> VUNDLE <<< ---------------"
 " Brief help
@@ -20,7 +20,7 @@ filetype off                  " required"
         Bundle 'tpope/vim-sensible'
         Bundle 'tpope/vim-surround'
         Bundle 'tpope/vim-fugitive'
-        Bundle 'nanotech/jellybeans.vim'
+
         "Bundle 'Lokaltog/vim-powerline'
         Bundle 'bling/vim-airline'
         Bundle 'scrooloose/syntastic'
@@ -28,15 +28,32 @@ filetype off                  " required"
         Bundle 'kien/ctrlp.vim'
         Bundle 'tmux-plugins/vim-tmux'
         Bundle 'tmux-plugins/vim-tmux-focus-events'
-        Plugin 'christoomey/vim-tmux-navigator'
-        "Bundle 'kana/vim-textobj-user'
+        Bundle 'christoomey/vim-tmux-navigator'
+		Bundle 'benmills/vimux'
+		Bundle 'easymotion/vim-easymotion'
+"		Bundle 'Valloric/YouCompleteMe'
+		Bundle 'marijnh/tern_for_vim'
+		Bundle 'jelera/vim-javascript-syntax'
+		Bundle 'vim-scripts/JavaScript-Indent'
+		Bundle 'bitc/vim-bad-whitespace'
+
+        "Themes
+        Bundle 'chriskempson/base16-vim'
+        "Bundle 'nanotech/jellybeans.vim'
+		Bundle 'edkolev/tmuxline.vim'
+
 
         " All of your Plugins must be added before the following line
         call vundle#end()            " required
         filetype plugin indent on    " required
 "------------------->>> NON-VUNDLE BELOW HERE <<< ---------------"
 
-color jellybeans
+let mapleader=","                   " , is the control/meta/leader character
+"color jellybeans
+let base16colorspace=256
+colorscheme base16-default
+set background=dark
+
 syntax on                           " Enable syntax highlighting
 set modelines=0
 set title                           " Set Window title
@@ -112,39 +129,68 @@ nnoremap <C-l> <C-w>l
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
+"------------------->>> AIRLINE <<< ---------------"
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
 
-let mapleader=","                   "Window management script pulled from http://www.agillo.net/simple-vim-window-management/
+"------------------->>> CTRL+P <<< ---------------"
+" Setup some default ignores
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
+  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+  \}
+
+" Use the nearest .git directory as the cwd
+let g:ctrlp_working_path_mode = 'r'
+
+" Use a leader instead of the actual named binding
+nmap <leader>p :CtrlP<cr>
+
+" Easy bindings for its various modes
+nmap <leader>bb :CtrlPBuffer<cr>
+nmap <leader>bm :CtrlPMixed<cr>
+nmap <leader>bs :CtrlPMRU<cr>
+
+"------------------->>> VIMUX <<< ---------------"
+"    From www.braintreepayments.com/blog/vimux-simple-vim-and-tmux-integration/
+
+ " Prompt for a command to run
+ map <Leader>vp :VimuxPromptCommand<CR>
+ " Run last command executed by VimuxRunCommand
+ map <Leader>vl :VimuxRunLastCommand<CR>
+ " Inspect runner pane
+ map <Leader>vi :VimuxInspectRunner<CR>
+ " Close vim tmux runner opened by VimuxRunCommand
+ map <Leader>vq :VimuxCloseRunner<CR>
+ " Interrupt any command running in the runner pane
+ map <Leader>vx :VimuxInterruptRunner<CR>
+ " Zoom the runner pane (use <bind-key> z to restore runner pane)
+ map <Leader>vz :call VimuxZoomRunner()<CR>
+
+
+"------------------->>> WINDOW MANAGEMENT <<< ---------------"
+"		From http://www.agillo.net/simple-vim-window-management/
 set title
 
-function! WinMove(key) 
+function! WinMove(key)
     let t:curwin = winnr()
     exec "wincmd ".a:key
     if (t:curwin == winnr()) "we havent moved
         if (match(a:key,'[jk]')) "were we going up/down
             wincmd v
-        else 
+        else
             wincmd s
         endif
         exec "wincmd ".a:key
     endif
 endfunction
-                                                 
+
 map <leader>h              :call WinMove('h')<cr>
 map <leader>k              :call WinMove('k')<cr>
 map <leader>l              :call WinMove('l')<cr>
 map <leader>j              :call WinMove('j')<cr>
 map <leader>wc :wincmd q<cr>
 map <leader>wr <C-W>r
-
-
-
-
-" Screen Title script pulled from http://www.anattatechnologies.com/q/2014/04/vim-and-screen-automagic-titles/
-if &term == "screen"
-    let &titlestring = "vim (" . expand("%:t") . ")"
-    set t_ts=k
-    set t_fs=\
-    set title
-endif
-autocmd TabEnter,WinEnter,BufReadPost,FileReadPost,BufNewFile * let &titlestring = 'vim(' . expand("%:t") . ')'
 

@@ -4,6 +4,7 @@
 - link:
     ~/.aliases.local: aliases.local
     ~/.antigen: antigen/
+    ~/.config: config/
     ~/.dotfiles: ''
     ~/.fonts: fonts/
     ~/.gitconfig: gitconfig
