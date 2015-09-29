@@ -2,7 +2,7 @@
 - clean: ['~']
 
 - link:
-    ~/.aliases.local: aliases.local
+    ~/.aliases_local: aliases_local
     ~/.antigen: zsh/antigen/
     ~/.config: config/
     #~/.dotfiles: ''

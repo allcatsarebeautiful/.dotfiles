@@ -1,0 +1,81 @@
+alias www='cd /var/www/'
+alias apache='cd /etc/apache2/'
+
+# Why ever use vi when we have vim?
+alias vi='vim'
+
+alias vpad="vim +set\ buftype=nofile +startinsert"
+alias vundle="vim +PluginInstall +qall"
+alias vundleup="vim +PluginUpdate +qall"
+
+alias node="nodejs"
+alias zshrc="vim ~/.zshrc"
+alias tmux.conf="vim ~/.tmux.conf"
+alias vimrc="vim ~/.vimrc"
+alias dotfiles="cd ~/.dotfiles"
+
+alias please='sudo '
+alias :q='exit'
+
+
+alias update="sudo apt-get update && sudo apt-get upgrade"
+alias install="sudo apt-get install"
+alias glog="git log --graph --oneline --decorate --date-order --color --boundary"
+
+
+# Make some possibly destructive commands more interactive.
+alias rm='rm -i'
+alias mv='mv -i'
+alias cp='cp -i'
+
+
+# alias ll="ls -AlFh"
+# alias l="ls -AlFh --group-directories-first"
+alias trl="tree --dirsfirst -ChFL 1"
+alias trll=" tree --dirsfirst -ChFupDaLg 1"
+alias tlog="tail -f /var/log/syslog"
+
+# Colorize output, add file type indicator, and put sizes in human readable format
+alias lsg='ls -GFh'
+
+# Same as above, but in long listing format
+alias llg='ls -GFhl'
+# Add some easy shortcuts for formatted directory listings and add a touch of color.
+alias ll='ls -hlGF --color=auto'
+alias la='ls -alhGF --color=auto'
+alias ls='ls -F --color=auto'
+alias lsh='ls -a | grep "^\."'
+alias sl='ls'
+alias dc='cd'
+alias lh='ls -l .??*'
+alias lhd='ls -ld .??*'
+
+
+alias diff="colordiff"
+alias df="df -H"
+alias du="du -ch"
+alias grep='grep --color=auto'
+alias less='less -FirSX'
+
+
+# Colored up cat!
+# Easy Insall & Pygments: sudo apt-get install python-pip && sudo pip install Pygments
+alias c='pygmentize -O style=monokai -f console256 -g'
+
+alias tmux="TERM=screen-256color-bce tmux"
+alias tn="tmux new -s"
+alias ta="tmux attach -t"
+alias td="tmux kill-session -t"
+alias tls="tmux list-sessions"
+
+# Change Directory multiple levels
+alias ..="cd .."
+alias ..2="cd ../.."
+alias ..3="cd ../../.."
+alias ..4="cd ../../../.."
+alias ..5="cd ../../../../.."
+alias ..6="cd ../../../../../.."
+alias ..7="cd ../../../../../../.."
+
+function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
+function fname() { find . -iname "*$@*"; }
