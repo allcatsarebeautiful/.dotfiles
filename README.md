@@ -9,7 +9,7 @@ THIS IS STILL AN ACTIVE WORK IN PROGRESS!
 
 * Uses [Dotbot][dotbot] to manage dotfiles.
 * Uses [Antigen][antigen] to manage zsh plugins
-* Uses [Vundle][vundle]to manage vim plugins
+* Uses [Vundle][vundle] to manage vim plugins
 * Uses [Tmux Plugin Manager][tpm] to manage tmux plugins<F24><F25>
 * Uses [base16][base16] for coloscheme options and continuity between [vim-airline](https://github.com/bling/vim-airline), my zsh prompt, and tmux.
 
