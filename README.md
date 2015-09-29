@@ -37,29 +37,10 @@ Fonts
 
 This terminal setup needs powerline fonts
 
-# Copy any (additional) fonts you may want to the ~/.dotfiles/fonts directory
-* cd /tmp
-* git clone http://github.com/gabrielelana/awesome-terminal-fonts
-* cd awesome-terminal-fonts
-* git checkout patching-strategy
-* cp patched/*.ttf ~/.dotfiles/fonts
-* sh ~/.dotfiles/install.sh
-
-# update the font-info cache
-* sudo fc-cache -fv ~/.fonts
-
-In './config/10-symbols.conf' replace 'PragmataPro' with the name of your preferred font
-Copy './config/10-symbols.conf'to '~/.config/fontconfig/conf.d' directory
-
-Or  maybe?
-sudo mv PowerlineSymbols.otf /usr/share/fonts/
-sudo fc-cache -vf
-sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/
+[Awesome Terminal Fonts][https://github.com/gabrielelan/awesome-terminal-fonts] should be installed, simply follow the directions at the bottom of the page.  Alternatively, try her patched fonts method perhaps, as it is explained [here][https://github.com/arialdomartini/oh-my-git#install-the-patched-font].
 
 
-Or perhaps. . .
-Install the fontconfig file. For newer versions of fontconfig the config path is ~/.config/fontconfig/conf.d/, for older versions it’s ~/.fonts.conf.d/:
+Other good font sources can be found [here][https://github.com/unixorn/awesome-zsh-plugins#fonts] on the [awesome-zsh-plugins][https://github.com/unixorn/awesome-zsh-plugins] page.
 
-mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
 
-For YouCompleteMe and Tern vim plugins, you must execute a few more steps. . .ahalbert.nfshost.com/Tech/Installing_Tern_for_Vim.html
+# For YouCompleteMe and Tern vim plugins, you must execute a few more steps; I don't have them enable currently but eventually plan to.

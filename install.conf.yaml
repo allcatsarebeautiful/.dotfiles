@@ -3,7 +3,7 @@
 
 - link:
     ~/.aliases.local: aliases.local
-    ~/.antigen: antigen/
+    ~/.antigen: zsh/antigen/
     ~/.config: config/
     #~/.dotfiles: ''
     ~/.fonts: fonts/

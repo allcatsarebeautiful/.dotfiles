@@ -13,7 +13,7 @@ bindkey -v
 export KEYTIMEOUT=1
 
 #Set up Zaw to work with CTRL+R
-source ~/.dotfiles/antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zaw.git/zaw.zsh
+source ~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zaw.git/zaw.zsh
 bindkey '^R' zaw-history
 bindkey -M filterselect '^R' down-line-or-history
 bindkey -M filterselect '^S' up-line-or-history
