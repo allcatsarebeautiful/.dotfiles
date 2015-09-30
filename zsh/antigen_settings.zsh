@@ -5,11 +5,13 @@
     antigen bundle robbyrussell/oh-my-zsh lib/
 
 # Antigen Bundles
+    antigen bundle allcatsarebeautiful/fasd
+	antigen bundle allcatsarebeautiful/tmux-mem-cpu-load
+
     antigen bundle djui/alias-tips
     antigen bundle mafredri/zsh-async
     antigen bundle rimraf/k
     #antigen bundle clvv/fasd
-    antigen bundle allcatsarebeautiful/fasd
     antigen bundle unixorn/autoupdate-antigen.zshplugin
     antigen bundle yonchu/vimman
     antigen bundle zsh-users/zsh-syntax-highlighting

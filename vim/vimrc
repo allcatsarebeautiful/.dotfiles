@@ -15,34 +15,34 @@ filetype off                  " required
 
         " Let Vundle manage Vundle
 		Bundle 'VundleVim/Vundle.vim'
-        "Bundle 'gmarik/vundle'
 
         " My Bundles
-        "Bundle 'tpope/vim-sensible'
-        "Bundle 'tpope/vim-surround'
-        "Bundle 'tpope/vim-fugitive'
+        Bundle 'tpope/vim-fugitive'
+        Bundle 'tpope/vim-sensible'
+        Bundle 'tpope/vim-surround'
 
-        "Bundle 'Lokaltog/vim-powerline'
-        "Bundle 'bling/vim-airline'
-        "Bundle 'scrooloose/syntastic'
-        "Bundle 'scrooloose/nerdtree'
-        "Bundle 'kien/ctrlp.vim'
-        "Bundle 'tmux-plugins/vim-tmux'
-        "Bundle 'tmux-plugins/vim-tmux-focus-events'
-        "Bundle 'christoomey/vim-tmux-navigator'
-		"Bundle 'benmills/vimux'
-		"Bundle 'easymotion/vim-easymotion'
+		Bundle 'bitc/vim-bad-whitespace'
+		Bundle 'easymotion/vim-easymotion'
+        Bundle 'kien/ctrlp.vim'
+        Bundle 'scrooloose/syntastic'
+        Bundle 'scrooloose/nerdtree'
+
+		Bundle 'benmills/vimux'
+        Bundle 'christoomey/vim-tmux-navigator'
+		Bundle 'edkolev/tmuxline.vim'
+        Bundle 'tmux-plugins/vim-tmux'
+        Bundle 'tmux-plugins/vim-tmux-focus-events'
+
+        "Themes
+        Bundle 'bling/vim-airline'
+        Bundle 'chriskempson/base16-vim'
+        "Bundle 'nanotech/jellybeans.vim'
+
+		"Javascript
 "		"Bundle 'Valloric/YouCompleteMe'
 		"Bundle 'marijnh/tern_for_vim'
 		"Bundle 'jelera/vim-javascript-syntax'
 		"Bundle 'vim-scripts/JavaScript-Indent'
-		"Bundle 'bitc/vim-bad-whitespace'
-
-        "Themes
-        "Bundle 'chriskempson/base16-vim'
-        "Bundle 'nanotech/jellybeans.vim'
-		"Bundle 'edkolev/tmuxline.vim'
-
 
         " All of your Plugins must be added before the following line
         call vundle#end()            " required
@@ -51,8 +51,8 @@ filetype off                  " required
 
 let mapleader=","                   " , is the control/meta/leader character
 "color jellybeans
-"let base16colorspace=256
-"colorscheme base16-default
+let base16colorspace=256
+colorscheme base16-default
 set background=dark
 
 syntax on                           " Enable syntax highlighting
@@ -130,11 +130,36 @@ nnoremap <C-l> <C-w>l
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
+"------------------->>> TMUXLINE <<< ---------------"
+" Disable separators
+let g:tmuxline_powerline_separators = 0
+
+" Status line is minimal and looks like this:
+"   | session > 1. Win name > ... < CPU Usage |
+let g:tmuxline_preset = {
+  \'a'    : '#S',
+  \'win'  : '#I:#W',
+  \'cwin' : '#I:#W',
+  \'options': {
+    \'status-justify': 'left'
+    \}
+  \}
+
+" CPU an memory usage segment requires
+"   https://github.com/thewtex/tmux-mem-cpu-load
+if executable('tmux-mem-cpu-load')
+  let g:tmuxline_preset.x = '#(tmux-mem-cpu-load 2)'
+endif
+
+
+
 "------------------->>> AIRLINE <<< ---------------"
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
+" Populate g:airline_symbols dict with powerline symbols
+let g:airline_powerline_fonts = 1
 
 "------------------->>> CTRL+P <<< ---------------"
 " Setup some default ignores
