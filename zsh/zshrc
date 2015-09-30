@@ -12,6 +12,8 @@ bindkey -v
 #Kill Vi Lag
 export KEYTIMEOUT=1
 
+eval "$(fasd --init auto)"
+
 #Set up Zaw to work with CTRL+R
 source ~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zaw.git/zaw.zsh
 bindkey '^R' zaw-history
@@ -24,9 +26,7 @@ zstyle ':filter-select' max-lines 3
 zstyle ':filter-select' case-insensitive yes # enable case-insensitive 
 zstyle ':filter-select' extended-search yes # see below
 
-
 #ZSH-History-Substring-Search bindings 
-
 # bind UP and DOWN arrow keys
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
@@ -41,7 +41,12 @@ bindkey '^[[B' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
-
+#Vimman
+#Custom Plugin Directories
+zstyle ':vimman:' dir ~/.vim/bundle
+#Set expiration date for cache
+zstyle ':vimman:' expire 7
+zstyle ':completion:*' use-cache yes
 
 #TO DO
 #   keep ssh sessions alive!

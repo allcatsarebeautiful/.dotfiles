@@ -10,6 +10,7 @@ alias vundleup="vim +PluginUpdate +qall"
 
 alias node="nodejs"
 alias zshrc="vim ~/.zshrc"
+alias antigenrc="vim ~/.zsh/antigen_settings.zsh"
 alias tmux.conf="vim ~/.tmux.conf"
 alias vimrc="vim ~/.vimrc"
 alias dotfiles="cd ~/.dotfiles"
