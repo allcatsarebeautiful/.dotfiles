@@ -1,14 +1,14 @@
-#Set the base antigen repo to oh-my-zsh, because there's toooons of plugins there
+##Set the base antigen repo to oh-my-zsh, because there's toooons of plugins there
     antigen use oh-my-zsh
 
-# Load various lib files
+## Load various lib files
     antigen bundle robbyrussell/oh-my-zsh lib/
 
-# Antigen Bundles
+## Antigen Bundles
     antigen bundle allcatsarebeautiful/fasd
 	antigen bundle allcatsarebeautiful/tmux-mem-cpu-load
 
-    antigen bundle djui/alias-tips
+    # antigen bundle djui/alias-tips
     antigen bundle mafredri/zsh-async
     antigen bundle rimraf/k
     #antigen bundle clvv/fasd
@@ -18,24 +18,24 @@
     antigen bundle zsh-users/zsh-history-substring-search
     antigen bundle zsh-users/zsh-completions
     antigen bundle zsh-users/zaw
-
+#
     antigen bundle common-aliases
-    antigen bundle command-not-found #only for Ubuntu/opensuse
+    #antigen bundle command-not-found #only for Ubuntu/opensuse
     antigen bundle git
     antigen bundle git-flow
     antigen bundle npm
     antigen bundle node
     antigen bundle screen
-    antigen bundle ssh-agent
+    #antigen bundle ssh-agent
     antigen bundle vi-mode
     #antigen bundle vundle
-
-#Random Fun Bundles
+#
+##Random Fun Bundles
     antigen bundle lol
     antigen bundle rand-quote
-
-
-# OS specific plugins
+#
+#
+## OS specific plugins
 if [[ $CURRENT_OS == 'OS X' ]]; then
     antigen bundle brew
     antigen bundle brew-cask
