@@ -37,7 +37,7 @@ Fonts
 
 This terminal setup needs powerline fonts
 
-[Awesome Terminal Fonts](https://github.com/gabrielelan/awesome-terminal-fonts) should be installed, simply follow the directions at the bottom of the page.  Alternatively, try her patched fonts method perhaps, as it is explained [here](https://github.com/arialdomartini/oh-my-git#install-the-patched-font).
+[Awesome Terminal Fonts](https://github.com/gabrielelana/awesome-terminal-fonts) should be installed, simply follow the directions at the bottom of the page.  Alternatively, try her patched fonts method perhaps, as it is explained [here](https://github.com/arialdomartini/oh-my-git#install-the-patched-font).
 
 
 Other good font sources can be found [here](https://github.com/unixorn/awesome-zsh-plugins#fonts) on the [awesome-zsh-plugins](https://github.com/unixorn/awesome-zsh-plugins) page.
