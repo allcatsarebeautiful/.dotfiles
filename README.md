@@ -16,10 +16,10 @@ THIS IS STILL AN ACTIVE WORK IN PROGRESS!
 Dotfiles
 ========
 
-After cloning this repo, run `install` to automatically set up the development
-environment. Note that the install script is idempotent: it can safely be run
-multiple times.
+After cloning this repo, run `install` to set up the development environment. Note that the install script is idempotent: it can safely be run multiple times.
 
+* Open Vim and type :PluginInstall to install Vundle Plugins.
+* Open Tmux and hit `+I to install Tmux plugins.
 
 Making Local Customizations
 ---------------------------
