@@ -43,4 +43,4 @@ This terminal setup needs powerline fonts
 Other good font sources can be found [here](https://github.com/unixorn/awesome-zsh-plugins#fonts) on the [awesome-zsh-plugins](https://github.com/unixorn/awesome-zsh-plugins) page.
 
 
-*For YouCompleteMe and Tern vim plugins, you must execute a few more steps; I don't have them enable currently but eventually plan to.*
+*For YouCompleteMe and Tern vim plugins, you must execute a few more steps; I don't have them enabled currently but eventually plan to.*
