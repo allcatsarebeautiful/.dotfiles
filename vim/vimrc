@@ -52,7 +52,7 @@ filetype off                  " required
 let mapleader=","                   " , is the control/meta/leader character
 "color jellybeans
 let base16colorspace=256
-colorscheme base16-default
+"colorscheme base16-default
 set background=dark
 
 syntax on                           " Enable syntax highlighting
