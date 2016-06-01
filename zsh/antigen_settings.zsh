@@ -28,7 +28,6 @@
     antigen bundle screen
     #antigen bundle ssh-agent
     antigen bundle vi-mode
-    #antigen bundle vundle
 #
 ##Random Fun Bundles
     antigen bundle lol

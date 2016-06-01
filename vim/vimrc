@@ -14,35 +14,37 @@ filetype off                  " required
         call vundle#begin()
 
         " Let Vundle manage Vundle
-		Bundle 'VundleVim/Vundle.vim'
+		Plugin 'VundleVim/Vundle.vim'
 
         " My Bundles
-        Bundle 'tpope/vim-fugitive'
-        Bundle 'tpope/vim-sensible'
-        Bundle 'tpope/vim-surround'
+        Plugin 'tpope/vim-fugitive'
+        Plugin 'tpope/vim-sensible'
+        Plugin 'tpope/vim-surround'
 
-		Bundle 'bitc/vim-bad-whitespace'
-		Bundle 'easymotion/vim-easymotion'
-        Bundle 'kien/ctrlp.vim'
-        Bundle 'scrooloose/syntastic'
-        Bundle 'scrooloose/nerdtree'
+        Plugin 'bling/vim-bufferline'
+		Plugin 'bitc/vim-bad-whitespace'
+		Plugin 'easymotion/vim-easymotion'
+        Plugin 'kien/ctrlp.vim'
+        Plugin 'scrooloose/syntastic'
+        Plugin 'scrooloose/nerdtree'
 
-		Bundle 'benmills/vimux'
-        Bundle 'christoomey/vim-tmux-navigator'
-		Bundle 'edkolev/tmuxline.vim'
-        Bundle 'tmux-plugins/vim-tmux'
-        Bundle 'tmux-plugins/vim-tmux-focus-events'
+		Plugin 'benmills/vimux'
+        Plugin 'christoomey/vim-tmux-navigator'
+		Plugin 'edkolev/tmuxline.vim'
+        Plugin 'tmux-plugins/vim-tmux'
+        Plugin 'tmux-plugins/vim-tmux-focus-events'
 
         "Themes
-        Bundle 'bling/vim-airline'
-        Bundle 'chriskempson/base16-vim'
-        "Bundle 'nanotech/jellybeans.vim'
+        Plugin 'vim-airline/vim-airline'
+        Plugin 'vim-airline/vim-airline-themes'
+        Plugin 'chriskempson/base16-vim'
+        "Plugin 'nanotech/jellybeans.vim'
 
 		"Javascript
-"		"Bundle 'Valloric/YouCompleteMe'
-		"Bundle 'marijnh/tern_for_vim'
-		"Bundle 'jelera/vim-javascript-syntax'
-		"Bundle 'vim-scripts/JavaScript-Indent'
+"		"Plugin 'Valloric/YouCompleteMe'
+		"Plugin 'marijnh/tern_for_vim'
+		"Plugin 'jelera/vim-javascript-syntax'
+		"Plugin 'vim-scripts/JavaScript-Indent'
 
         " All of your Plugins must be added before the following line
         call vundle#end()            " required
@@ -136,30 +138,31 @@ let g:tmuxline_powerline_separators = 0
 
 " Status line is minimal and looks like this:
 "   | session > 1. Win name > ... < CPU Usage |
-let g:tmuxline_preset = {
-  \'a'    : '#S',
-  \'win'  : '#I:#W',
-  \'cwin' : '#I:#W',
-  \'options': {
-    \'status-justify': 'left'
-    \}
-  \}
+"let g:tmuxline_preset = {
+"  \'a'    : '#S',
+"  \'win'  : '#I:#W',
+"  \'cwin' : '#I:#W',
+"  \'options': {
+"    \'status-justify': 'left'
+"    \}
+"  \}
 
-" CPU an memory usage segment requires
-"   https://github.com/thewtex/tmux-mem-cpu-load
-if executable('tmux-mem-cpu-load')
-  let g:tmuxline_preset.x = '#(tmux-mem-cpu-load 2)'
-endif
-
-
+let g:tmuxline_preset = 'nightly_fox'
 
 "------------------->>> AIRLINE <<< ---------------"
+" Set an Airline Theme
+let g:airline_theme="bubblegum"
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 " Populate g:airline_symbols dict with powerline symbols
 let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
 
 "------------------->>> CTRL+P <<< ---------------"
 " Setup some default ignores
