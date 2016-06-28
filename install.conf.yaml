@@ -4,7 +4,7 @@
 - link:
     ~/.aliases_local: aliases_local
     ~/.antigen: zsh/antigen/
-    #~/.zplug:zsh/zplug
+    ~/.zplugrc: zsh/zplugrc
     ~/.config: config/
     #~/.dotfiles: ''
     ~/.fonts: fonts/
@@ -19,5 +19,4 @@
     ~/.zshrc: zsh/zshrc
 
 - shell:
-    # - [git submodule --init --recursive, Installing submodules]
     - git update-submodules # after linking ~/.gitconfig

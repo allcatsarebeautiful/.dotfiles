@@ -1,7 +1,19 @@
+source ~/.zsh/zplug
+
+if ! zplug check --verbose; then
+  printf "Install? [y/N]: "
+  if read -q; then
+    echo; zplug install
+  fi
+fi
+
+
 ## Load various lib files
     zplug "lib", from:oh-my-zsh
 
 ## Antigen Bundles
+
+    zplug "zplug/zplug"
 
     # zplug "djui/alias-tips"
     zplug "mafredri/zsh-async"
@@ -10,12 +22,11 @@
     zplug "unixorn/autoupdate-antigen.zshplugin"
     zplug "yonchu/vimman"
     zplug "zsh-users/zsh-syntax-highlighting"
-    zplug "antigen bundle zsh-users/zsh-history-substring-search"
-    zplug "antigen bundle zsh-users/zsh-completions"
-    zplug "antigen bundle zsh-users/zaw"
+    zplug "zsh-users/zsh-history-substring-search"
+    zplug "zsh-users/zsh-completions"
+    zplug "zsh-users/zaw"
 #
     zplug "plugsin/common-aliases", from:oh-my-zsh
-    #zplug "plugins/command-not-found" #only for Ubuntu/opensuse
     zplug "plugins/git", from:oh-my-zsh
     zplug "plugins/git-flow", from:oh-my-zsh
     zplug "plugins/npm", from:oh-my-zsh
@@ -37,7 +48,7 @@ if [[ $CURRENT_OS == 'OS X' ]]; then
     zplug "plugins/osx", from:oh-my-zsh
 elif [[ $CURRENT_OS == 'Linux' ]]; then
     # None so far...
-
+    zplug "plugins/command-not-found"
     if [[ $DISTRO == 'CentOS' ]]; then
         zplug "plugins/centos", from:oh-my-zsh
     fi
@@ -52,7 +63,7 @@ fi
 #    blinks
 #!    mh
 #    antigen theme norm
-    zplug sindresorhus/pure # requires mafredri/zsh-async
+    zplug "sindresorhus/pure" # requires mafredri/zsh-async
 #    antigen theme pygmalion
 #    ys
 #    (not in oh-my-zsh)
