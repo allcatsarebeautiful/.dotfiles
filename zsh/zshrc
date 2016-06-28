@@ -1,6 +1,6 @@
 #Load zplug
+source ~/.zplug/init.zsh
 source ~/.zsh/zplugrc
-source ~/.zplug/PLUG_HOME/init.zsh
 
 
 source ~/.aliases_local
@@ -17,7 +17,6 @@ export KEYTIMEOUT=1
 eval "$(fasd --init auto)"
 
 #Set up Zaw to work with CTRL+R
-source ~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zaw.git/zaw.zsh
 bindkey '^R' zaw-history
 bindkey -M filterselect '^R' down-line-or-history
 bindkey -M filterselect '^S' up-line-or-history

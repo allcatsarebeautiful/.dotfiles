@@ -9,7 +9,7 @@ fi
 
 
 ## Load various lib files
-    zplug "lib", from:oh-my-zsh
+    zplug "robbyrussel/oh-my-zsh/lib"
 
 ## Antigen Bundles
 
@@ -20,20 +20,20 @@ fi
     zplug "rimraf/k"
     #zplug "clvv/fasd"
     zplug "unixorn/autoupdate-antigen.zshplugin"
-    zplug "yonchu/vimman"
+    #zplug "yonchu/vimman"
     zplug "zsh-users/zsh-syntax-highlighting"
     zplug "zsh-users/zsh-history-substring-search"
     zplug "zsh-users/zsh-completions"
     zplug "zsh-users/zaw"
 #
     zplug "plugsin/common-aliases", from:oh-my-zsh
-    zplug "plugins/git", from:oh-my-zsh
+    #zplug "plugins/git", from:oh-my-zsh
     zplug "plugins/git-flow", from:oh-my-zsh
     zplug "plugins/npm", from:oh-my-zsh
     zplug "plugins/node", from:oh-my-zsh
     zplug "plugins/screen", from:oh-my-zsh
     #zplug "plugins/ssh-agent", from:oh-my-zsh
-    zplug "plugins/vi-mode", from:oh-my-zsh
+    #zplug "plugins/vi-mode", from:oh-my-zsh
 #
 ##Random Fun Bundles
     zplug "plugins/lol", from:oh-my-zsh
