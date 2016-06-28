@@ -1,6 +1,6 @@
 [dotbot]: https://github.com/anishathalye/dotbot
-[antigen]: https://github.com/zsh-users/antigen
-[vundle]: https://github.com/VundleVim/Vundle.vim
+[zplug]: https://github.com/zplug/zplug
+[vim-plug]: https://github.com/junegunn/vim-plug
 [tpm]: https://github.com/tmux-plugins/tpm
 [base16]: https://github.com/chriskempson/base16
 
@@ -8,9 +8,9 @@ THIS IS STILL AN ACTIVE WORK IN PROGRESS!
 
 
 * Uses [Dotbot][dotbot] to manage dotfiles.
-* Uses [Antigen][antigen] to manage zsh plugins
-* Uses [Vundle][vundle] to manage vim plugins
-* Uses [Tmux Plugin Manager][tpm] to manage tmux plugins<F24><F25>
+* Uses [zplug][zplug] to manage zsh plugins.
+* Uses [vim-plug][vim-plug] to manage vim plugins.
+* Uses [Tmux Plugin Manager][tpm] to manage tmux plugins.
 * Uses [base16][base16] for coloscheme options and continuity between [vim-airline](https://github.com/vim-airline/vim-airline), my zsh prompt, and tmux.
 
 Dotfiles
@@ -18,7 +18,7 @@ Dotfiles
 
 After cloning this repo, run `install` to set up the development environment. Note that the install script is idempotent: it can safely be run multiple times.
 
-* Open Vim and type :PluginInstall to install Vundle Plugins.
+* Open Vim and type :PluginInstall to install plugins.
 * Open Tmux and hit `+I to install Tmux plugins.
 
 Making Local Customizations
