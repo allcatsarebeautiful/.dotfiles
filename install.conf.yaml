@@ -4,6 +4,7 @@
 - link:
     ~/.aliases_local: aliases_local
     ~/.antigen: zsh/antigen/
+    #~/.zplug:zsh/zplug
     ~/.config: config/
     #~/.dotfiles: ''
     ~/.fonts: fonts/

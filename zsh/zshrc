@@ -1,6 +1,11 @@
 #Load antigen.sh and then all of the bundles
 source ~/.antigen/antigen.zsh
 source ~/.zsh/antigen_settings.zsh
+#Load zplug
+#source ~/.zplug/init.zsh && zplug update --self
+#source ~/.zsh/zplug_settings.zsh
+
+
 source ~/.aliases_local
 
 #Load Base16 shell colors
@@ -23,10 +28,10 @@ bindkey -M filterselect '^E' accept-search
 
 zstyle ':filter-select:highlight' matched fg=green
 zstyle ':filter-select' max-lines 3
-zstyle ':filter-select' case-insensitive yes # enable case-insensitive 
+zstyle ':filter-select' case-insensitive yes # enable case-insensitive
 zstyle ':filter-select' extended-search yes # see below
 
-#ZSH-History-Substring-Search bindings 
+#ZSH-History-Substring-Search bindings
 # bind UP and DOWN arrow keys
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up

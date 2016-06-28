@@ -1,55 +1,64 @@
+
+" Check if vim-plug is already installed, if not, install
+"   If behind HTTP proxy, you may need to add --insecure option to the curl command.
+"   You may also need to set $GIT_SSL_NO_VERIFY to true. 
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        autocmd VimEnter * PlugInstall | source $MYVIMRC
+        endif
+
 set nocompatible              " be iMproved, required
-filetype off                  " required
+"filetype off                  " not required with vimplug
 
-"------------------->>> VUNDLE <<< ---------------"
+"------------------->>> VIM-PLUG <<< ---------------"
 " Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" set the runtime path to include Vundle and initialize
-        set rtp+=~/.vim/bundle/Vundle.vim
-        call vundle#begin()
+"  PlugInstall [name ...] [#threads]  - Install plugins
+"  PlugUpdate [name ...] [#threads]   - Install or update plugins
+"  PlugClean[!]                       - Remove unused directories (bang version will clean without prompt)
+"  PlugUpgrade                        - Upgrade vim-plug itself
+"  PlugStatus                         - Check the status of plugins
 
-        " Let Vundle manage Vundle
-		Plugin 'VundleVim/Vundle.vim'
 
-        " My Bundles
-        Plugin 'tpope/vim-fugitive'
-        Plugin 'tpope/vim-sensible'
-        Plugin 'tpope/vim-surround'
+    call plug#begin('~/.vim/plugs')
 
-        Plugin 'bling/vim-bufferline'
-		Plugin 'bitc/vim-bad-whitespace'
-		Plugin 'easymotion/vim-easymotion'
-        Plugin 'kien/ctrlp.vim'
-        Plugin 'scrooloose/syntastic'
-        Plugin 'scrooloose/nerdtree'
+        " My Plugins
+        Plug 'tpope/vim-fugitive'
+        Plug 'tpope/vim-sensible'
+        Plug 'tpope/vim-surround'
 
-		Plugin 'benmills/vimux'
-        Plugin 'christoomey/vim-tmux-navigator'
-		Plugin 'edkolev/tmuxline.vim'
-        Plugin 'tmux-plugins/vim-tmux'
-        Plugin 'tmux-plugins/vim-tmux-focus-events'
+        Plug 'bling/vim-bufferline'
+        Plug 'bitc/vim-bad-whitespace'
+        Plug 'easymotion/vim-easymotion'
+        Plug 'kien/ctrlp.vim'
+        Plug 'scrooloose/syntastic'
+        Plug 'scrooloose/nerdtree'
+
+        Plug 'benmills/vimux'
+        Plug 'christoomey/vim-tmux-navigator'
+        Plug 'edkolev/tmuxline.vim'
+        Plug 'tmux-plugins/vim-tmux'
+        Plug 'tmux-plugins/vim-tmux-focus-events'
+
+        Plug 'sheerun/vim-polyglot'
+        "Plug 'othree/yajs.vim`, { 'for': 'javascript' }
+        "Plug 'gavocanov/vim-js-indent', { 'for': 'javascript' }
 
         "Themes
-        Plugin 'vim-airline/vim-airline'
-        Plugin 'vim-airline/vim-airline-themes'
-        Plugin 'chriskempson/base16-vim'
+        Plug 'vim-airline/vim-airline'
+        Plug 'vim-airline/vim-airline-themes'
+        Plug 'chriskempson/base16-vim'
         "Plugin 'nanotech/jellybeans.vim'
 
-		"Javascript
-"		"Plugin 'Valloric/YouCompleteMe'
-		"Plugin 'marijnh/tern_for_vim'
-		"Plugin 'jelera/vim-javascript-syntax'
-		"Plugin 'vim-scripts/JavaScript-Indent'
+        "Javascript
+   "Plugin 'Valloric/YouCompleteMe'
+   "Plugin 'marijnh/tern_for_vim'
+   "Plugin 'jelera/vim-javascript-syntax'
+    "Plugin 'vim-scripts/JavaScript-Indent'
 
         " All of your Plugins must be added before the following line
-        call vundle#end()            " required
-        filetype plugin indent on    " required
-"------------------->>> NON-VUNDLE BELOW HERE <<< ---------------"
+        call plug#end()            " required
+"------------------->>> NON-VIM-PLUG BELOW HERE <<< ---------------"
 
 let mapleader=","                   " , is the control/meta/leader character
 "color jellybeans
@@ -57,12 +66,11 @@ let base16colorspace=256
 "colorscheme base16-default
 set background=dark
 
-syntax on                           " Enable syntax highlighting
 set modelines=0
 set title                           " Set Window title
-set tabstop=4                       " Set up tabs so that they insert 4 spaces instead of a tab character
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2                       " Set up tabs so that they insert 4 spaces instead of a tab character
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 
 set paste                           " Use intelligent paste with whitespace

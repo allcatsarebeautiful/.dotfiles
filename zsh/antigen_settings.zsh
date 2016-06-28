@@ -1,6 +1,3 @@
-##Set the base antigen repo to oh-my-zsh, because there's toooons of plugins there
-    antigen use oh-my-zsh
-
 ## Load various lib files
     antigen bundle robbyrussell/oh-my-zsh lib/
 
@@ -68,7 +65,7 @@ fi
 #    antigen theme caiogondim/bullet-train-oh-my-zsh-theme bullet-train #requires powerline fonts and ttf-ancient-fonts
 
 #Fonts
-#   larsenwork/monoid 
+#   larsenwork/monoid
 #   belluzj/fantasque-sans
 #   gabrielelana/awesome-terminal-fonts
 #   powerline/fonts
