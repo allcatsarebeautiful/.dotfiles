@@ -16,7 +16,10 @@ THIS IS STILL AN ACTIVE WORK IN PROGRESS!
 Dotfiles
 ========
 
-After cloning this repo, run `install` to set up the development environment. Note that the install script is idempotent: it can safely be run multiple times.
+After cloning this repo, `cd .dotfiles` and `sh ./install` to set up the development environment.
+Run `sh ./install` again to set up git submodules and their links.
+Reload terminal or open new session and follow directions to set up ZSH.
+__Note that the install script is idempotent: it can safely be run multiple times.__
 
 * Open Vim and type :PluginInstall to install plugins.
 * Open Tmux and hit `+I to install Tmux plugins.

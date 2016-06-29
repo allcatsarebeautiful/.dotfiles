@@ -2,7 +2,6 @@
 source ~/.zplug/init.zsh
 source ~/.zsh/zplugrc
 
-
 source ~/.aliases_local
 
 #Load Base16 shell colors
