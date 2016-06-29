@@ -1,4 +1,6 @@
 #Load zplug
+DEFAULT_USER=`whoami`
+
 source ~/.zplug/init.zsh
 source ~/.zsh/zplugrc
 
@@ -7,6 +9,7 @@ source ~/.aliases_local
 #Load Base16 shell colors
 BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+ZSH_THEME="spaceship"
 
 #Vim keybindings
 bindkey -v
@@ -43,7 +46,7 @@ bindkey -M vicmd 'j' history-substring-search-down
 
 #Vimman
 #Custom Plugin Directories
-zstyle ':vimman:' dir ~/.vim/bundle
+zstyle ':vimman:' dir ~/.vim/plugs
 #Set expiration date for cache
 zstyle ':vimman:' expire 7
 zstyle ':completion:*' use-cache yes

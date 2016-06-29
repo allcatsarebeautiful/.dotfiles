@@ -5,23 +5,23 @@ source ~/.zsh/zplug
     zplug "zplug/zplug"
 
     ## Library Plugins to load first
-    zplug "lib/clipboard.zsh", from:oh-my-zsh, nice:-10
-    zplug "lib/compfix.zsh", from:oh-my-zsh, nice:-10
-    zplug "lib/completion.zsh", from:oh-my-zsh, nice:-10
-    zplug "lib/correction.zsh", from:oh-my-zsh, nice:-10
-    zplug "lib/diagnostics.zsh", from:oh-my-zsh, nice:-10
-    zplug "lib/directories.zsh", from:oh-my-zsh, nice:-10
-    zplug "lib/functions.zsh", from:oh-my-zsh, nice:-10
-    zplug "lib/git.zsh", from:oh-my-zsh, nice:-10
-    zplug "lib/grep.zsh", from:oh-my-zsh, nice:-10
-    zplug "lib/history.zsh", from:oh-my-zsh, nice:-10
-    zplug "lib/key-bindings.zsh", from:oh-my-zsh, nice:-10
-    zplug "lib/misc.zsh", from:oh-my-zsh, nice:-10
-    zplug "lib/nvm.zsh", from:oh-my-zsh, nice:-10
-    zplug "lib/prompt_info_functions.zsh", from:oh-my-zsh, nice:-10
-    zplug "lib/spectrum.zsh", from:oh-my-zsh, nice:-10
-    zplug "lib/termsupport.zsh", from:oh-my-zsh, nice:-10
-    zplug "lib/theme-and-appearance.zsh", from:oh-my-zsh, nice:-10
+    zplug "lib/clipboard", from:oh-my-zsh, nice:-10
+    zplug "lib/compfix", from:oh-my-zsh, nice:-10
+    zplug "lib/completion", from:oh-my-zsh, nice:-10
+    zplug "lib/correction", from:oh-my-zsh, nice:-10
+    zplug "lib/diagnostics", from:oh-my-zsh, nice:-10
+    zplug "lib/directories", from:oh-my-zsh, nice:-10
+    zplug "lib/functions", from:oh-my-zsh, nice:-10
+    zplug "lib/git", from:oh-my-zsh, nice:-10
+    zplug "lib/grep", from:oh-my-zsh, nice:-10
+    zplug "lib/history", from:oh-my-zsh, nice:-10
+    zplug "lib/key-bindings", from:oh-my-zsh, nice:-10
+    zplug "lib/misc", from:oh-my-zsh, nice:-10
+    zplug "lib/nvm", from:oh-my-zsh, nice:-10
+    zplug "lib/prompt_info_functions", from:oh-my-zsh, nice:-10
+    zplug "lib/spectrum", from:oh-my-zsh, nice:-10
+    zplug "lib/termsupport", from:oh-my-zsh, nice:-10
+    zplug "lib/theme-and-appearance", from:oh-my-zsh, nice:-10
 
     zplug "mafredri/zsh-async"
     zplug "rimraf/k"
@@ -32,7 +32,6 @@ source ~/.zsh/zplug
     zplug "zsh-users/zsh-completions"
     zplug "zsh-users/zaw", nice:10
 #
-    zplug "plugins/git", from:oh-my-zsh, nice:10
     zplug "plugins/git-flow", from:oh-my-zsh
     zplug "plugins/npm", from:oh-my-zsh
     zplug "plugins/node", from:oh-my-zsh
@@ -55,17 +54,14 @@ source ~/.zsh/zplug
     #zplug "plugins/vi-mode", from:oh-my-zsh
     #zplug "plugins/common-aliases", from:oh-my-zsh
 
-# Themes
-#    robbyrussel
-#    agnoster
-#    avit #would be nice with pwd and vim status
-#    blinks
-     zplug "sindresorhus/pure" # requires mafredri/zsh-async
-#    ys
-#    zplug desyncr/zshrc themes/af-magic-mod
-#    zplug Valodim/zsh-prompt-powerline
-#    zplug nojhan/liquidprompt #or maybe bundle instead of them?
-#    zplug caiogondim/bullet-train-oh-my-zsh-theme bullet-train #requires powerline fonts and ttf-ancient-fonts
+## Themes
+    #setopt prompt_subst # Make sure propt is able to be generated properly for adambiggs.
+    #zplug "adambiggs/zsh-theme", use:adambiggs.zsh-theme
+    #zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh-theme
+    #zplug "skylerlee/zeta-zsh-theme", use:zeta.zsh-theme
+    zplug "themes/agnoster", from:oh-my-zsh
+    #zplug "themes/avit", from:oh-my-zsh #would be nice with pwd and vim status
+    #zplug "sindresorhus/pure" # requires mafredri/zsh-async
 
 #Fonts
 #   larsenwork/monoid
